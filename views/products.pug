@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    p
+        a(href='/products') Retour à la liste des produits
+    div
+        p
+            b Name :
+            | #{item.name}
+            br
+            b ID :
+            | #{item._id}
+            br
+            b Price :
+            | #{item.price} €
+            br
+            b Category :
+                a(href=`http://localhost:3000/categories/${item.categoryId}`) #{category.name}
+            br
+            b Description :
+            | #{item.description}
+            br
+            br
+            b Actions :
+                br
+                a(href=`http://localhost:3000/products/${item._id}/delete`) Supprimer
+                br
+                a(href=`http://localhost:3000/products/${item._id}/update`) Editer

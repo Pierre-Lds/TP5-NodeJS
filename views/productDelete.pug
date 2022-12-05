@@ -1,0 +1,6 @@
+extends layout
+
+block content
+    form(method='POST' action=`/product/${id}?_method=DELETE`)
+        button.btn.btn-primary(type='submit') Supprimer le produit
+
