@@ -5,6 +5,8 @@ const app = express();
 const port = process.env.PORT;
 const morgan = require('morgan');
 const path = require("path");
+const helmet = require('helmet');
+const compression = require('compression');
 
 // Require
 const indexRouter = require("./routes/index.js");
@@ -13,6 +15,8 @@ const productsRouter = require("./routes/products.js");
 
 // Use & Set
 app.use(morgan('tiny'));
+app.use(helmet());
+app.use(compression());
 app.use("/", express.static("public"));
 app.set('views', path.join(__dirname, "views"))
 app.set('view engine', 'pug');
