@@ -15,7 +15,7 @@ block content
             | #{item.price} €
             br
             b Category :
-                a(href=`http://localhost:3000/categories/${item.categoryId}`) #{category.name}
+                a(href=`/categories/${item.categoryId}`) #{category.name}
             br
             b Description :
             | #{item.description}
@@ -23,6 +23,6 @@ block content
             br
             b Actions :
                 br
-                a(href=`http://localhost:3000/products/${item._id}/delete`) Supprimer
+                a(href=`/products/${item._id}/delete`) Supprimer
                 br
-                a(href=`http://localhost:3000/products/${item._id}/update`) Editer
+                a(href=`/products/${item._id}/update`) Editer
